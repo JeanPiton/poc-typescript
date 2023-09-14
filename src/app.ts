@@ -2,7 +2,7 @@ import express,{json} from "express"
 import "express-async-errors"
 import dotenv from "dotenv"
 import cors from "cors"
-import router from "routes/index.routes"
+import router from "@/routes/index.routes"
 dotenv.config()
 
 const server = express()

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { ObjectSchema } from 'joi';
-import errorList from 'errors/errorList';
+import errorList from '@/errors/errorList';
 
 export function validateBody<T>(schema: ObjectSchema<T>): ValidationMiddleware {
   return validate(schema, 'body');

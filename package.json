@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts"
   },
@@ -28,6 +28,8 @@
     "@types/pg": "^8.10.2",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.7",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"
   }
 }

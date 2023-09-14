@@ -1,4 +1,4 @@
-import { CustomError } from "errors/errorList";
+import { CustomError } from "@/errors/errorList";
 import { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
 
