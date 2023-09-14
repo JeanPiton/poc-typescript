@@ -3,6 +3,7 @@ import "express-async-errors"
 import dotenv from "dotenv"
 import cors from "cors"
 import router from "@/routes/index.routes"
+import errorHandler from "@/middlewares/errorHandler"
 dotenv.config()
 
 const server = express()
@@ -10,6 +11,7 @@ const server = express()
 server.use(cors())
 server.use(json())
 server.use(router)
+server.use(errorHandler)
 
 const port = process.env.PORT || 5000
 server.listen(port,()=>{console.log(`Server running at http://localhost:${port}`)})

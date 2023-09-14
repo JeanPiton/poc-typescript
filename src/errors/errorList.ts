@@ -7,8 +7,16 @@ function invalidDataError(message:string|Array<string>):CustomError{
     }
 }
 
+function conflictError(message:string):CustomError{
+    return{
+        type:'ConflictError',
+        message:message
+    }
+}
+
 const errorList = {
-    invalidDataError
+    invalidDataError,
+    conflictError
 }
 
 export default errorList
