@@ -8,8 +8,13 @@ async function addFilm(nome:string,plataforma:string,genero:string,completo:bool
     return FilmRepository.addFilm(nome,plataforma,genero,completo)
 }
 
+async function getAllFilms():Promise<FilmWid[]> {
+    return FilmRepository.FindFilm(null,null,null)
+}
+
 const FilmServices = {
-    addFilm
+    addFilm,
+    getAllFilms
 }
 
 export default FilmServices
