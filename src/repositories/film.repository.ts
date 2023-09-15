@@ -1,6 +1,7 @@
 import { db } from "@/database/database.connection";
+import { FilmWid } from "@/protocol";
 
-async function FindFilm(id:number|null,nome:string|null,plataforma:string|null) {
+async function FindFilm(id:number|null,nome:string|null,plataforma:string|null):Promise<FilmWid[]> {
     const array = []
     let query = `SELECT * FROM filmes WHERE 1=1 `
     if(id!=null){
