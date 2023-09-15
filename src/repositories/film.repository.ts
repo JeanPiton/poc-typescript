@@ -23,9 +23,16 @@ async function addFilm(nome:string,plataforma:string,genero:string,completo:bool
     await db.query(`INSERT INTO filmes(nome,plataforma,genero,completo) VALUES ($1,$2,$3,$4)`,[nome,plataforma,genero,completo])
 }
 
+async function updateFilm(id:number,nome:string,plataforma:string,genero:string,completo:boolean) {
+    await db.query(`UPDATE filmes
+    SET nome = $2, plataforma = $3, genero = $4, completo = $5
+    WHERE id = $1`,[id,nome,plataforma,genero,completo])
+}
+
 const FilmRepository = {
     FindFilm,
-    addFilm
+    addFilm,
+    updateFilm
 }
 
 export default FilmRepository

@@ -12,9 +12,16 @@ async function getAllFilms():Promise<FilmWid[]> {
     return FilmRepository.FindFilm(null,null,null)
 }
 
+async function updateFilm(id:number,nome:string,plataforma:string,genero:string,completo:boolean) {
+    const exist:Array<FilmWid> = await FilmRepository.FindFilm(id,null,null)
+    if(exist.length==0) throw errorList.notFoundError("filme não encontrado")
+    return FilmRepository.updateFilm(id,nome,plataforma,genero,completo)
+}
+
 const FilmServices = {
     addFilm,
-    getAllFilms
+    getAllFilms,
+    updateFilm
 }
 
 export default FilmServices

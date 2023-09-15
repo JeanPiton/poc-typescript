@@ -7,3 +7,7 @@ export const AddFilm = joi.object<Film>({
     genero: joi.string().required(),
     completo: joi.boolean().required()
 })
+
+export const IdFilm = joi.object<{id:number}>({
+    id: joi.number().integer().required()
+})

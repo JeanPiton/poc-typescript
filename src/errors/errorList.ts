@@ -14,9 +14,17 @@ function conflictError(message:string):CustomError{
     }
 }
 
+function notFoundError(message:string):CustomError{
+    return{
+        type:'NotFound',
+        message:message
+    }
+}
+
 const errorList = {
     invalidDataError,
-    conflictError
+    conflictError,
+    notFoundError
 }
 
 export default errorList
