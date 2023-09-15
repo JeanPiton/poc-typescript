@@ -18,10 +18,17 @@ async function updateFilm(id:number,nome:string,plataforma:string,genero:string,
     return FilmRepository.updateFilm(id,nome,plataforma,genero,completo)
 }
 
+async function deleteFilm(id:number) {
+    const exist:Array<FilmWid> = await FilmRepository.FindFilm(id,null,null)
+    if(exist.length==0) throw errorList.notFoundError("filme não encontrado")
+    return FilmRepository.deleteFilm(id)
+}
+
 const FilmServices = {
     addFilm,
     getAllFilms,
-    updateFilm
+    updateFilm,
+    deleteFilm
 }
 
 export default FilmServices

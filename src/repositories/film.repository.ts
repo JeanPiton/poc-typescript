@@ -29,10 +29,15 @@ async function updateFilm(id:number,nome:string,plataforma:string,genero:string,
     WHERE id = $1`,[id,nome,plataforma,genero,completo])
 }
 
+async function deleteFilm(id:number) {
+    await db.query(`DELETE FROM filmes WHERE id = $1`,[id])
+}
+
 const FilmRepository = {
     FindFilm,
     addFilm,
-    updateFilm
+    updateFilm,
+    deleteFilm
 }
 
 export default FilmRepository

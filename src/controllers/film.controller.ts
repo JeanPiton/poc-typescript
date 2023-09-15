@@ -20,3 +20,9 @@ export async function updateFilm(req:Request,res:Response){
     await FilmServices.updateFilm(parseInt(id),nome,plataforma,genero,completo)
     res.sendStatus(httpStatus.OK)
 }
+
+export async function deleteFilm(req:Request,res:Response) {
+    const {id} = req.params
+    await FilmServices.deleteFilm(parseInt(id))
+    res.sendStatus(httpStatus.OK)
+}
